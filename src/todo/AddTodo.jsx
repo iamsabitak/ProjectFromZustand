@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from "react";
 
 function AddTodo() {
+  const [input, setInput] = useState();
   return (
-    <div>AddTodo</div>
-  )
+    <div>
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+    </div>
+  );
 }
 
-export default AddTodo
+export default AddTodo;
