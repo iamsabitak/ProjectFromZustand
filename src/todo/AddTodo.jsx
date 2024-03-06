@@ -3,13 +3,16 @@ import { store } from "../zustand/store";
 
 function AddTodo() {
   const [input, setInput] = useState("");
+  const { addTodo, removeTodo, todos } = store();
+  const addtodos = () => {
+    addTodo(input);
+  };
 
-  const addtodos = () =>
-    store.getState().addTodo({ text: input, id: Date.now() });
+  // const todos = store((state) => state.todos);
 
-  const todos = store((state) => state.todos);
-
-  const removetodos = (id) => store.getState().removeTodo(id);
+  const removetodos = (id) => {
+    removeTodo(id);
+  };
 
   return (
     <div>
