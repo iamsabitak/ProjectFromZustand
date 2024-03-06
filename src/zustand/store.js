@@ -11,8 +11,8 @@ export const store = create((set) => ({
   increase: () => set((state) => ({ count: state.count + 1 })),
   decrease: () => set((state) => ({ count: state.count - 1 })),
 
-  addTodo: (newTodo) =>
-    set((state) => ({ ...state, todos: [...state.todos, newTodo] })),
+  addTodo: (text) =>
+    set((state) => ({ todos: [...state.todos, { text, id: Date.now() }] })),
   removeTodo: (id) =>
     set((state) => ({ todos: state.todos.filter((todo) => todo.id !== id) })),
 }));
