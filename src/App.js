@@ -3,7 +3,7 @@ import React from "react";
 // import { Controls } from "./bearcounter/Controls";
 import AddTodo from "./todo/AddTodo";
 
-import Counter from "./counter/Counter";
+// import Counter from "./counter/Counter";
 // import Username from "./user/Username";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <div>
       {/* <BearCounter /> */}
       {/* <Controls /> */}
-      <Counter />
+      {/* <Counter /> */}
       <AddTodo />
       {/* <Username /> */}
     </div>
