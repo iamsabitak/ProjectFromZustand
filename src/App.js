@@ -1,15 +1,16 @@
 import React from "react";
+import BearCounter from "./bearcounter/BearCounter";
+import { Controls } from "./bearcounter/Controls";
 import AddTodo from "./todo/AddTodo";
-// import BearCounter from "./components/BearCounter";
-// import { Controls } from "./components/Controls";
+
 // import Counter from "./components/Counter";
 
 function App() {
   return (
     <div>
-      {/* <BearCounter />
+      <BearCounter />
       <Controls />
-      <Counter /> */}
+      {/* <Counter /> */}
       <AddTodo />
     </div>
   );
