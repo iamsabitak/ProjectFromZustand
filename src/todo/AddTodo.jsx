@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { store } from "../zustand/store";
 
 function AddTodo() {
@@ -7,8 +8,6 @@ function AddTodo() {
   const addtodos = () => {
     addTodo(input);
   };
-
-  // const todos = store((state) => state.todos);
 
   const removetodos = (id) => {
     removeTodo(id);
