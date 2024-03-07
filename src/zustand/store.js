@@ -15,7 +15,12 @@ export const store = create(
       decrease: () => set((state) => ({ count: state.count - 1 })),
 
       addTodo: (text) =>
-        set((state) => ({ todos: [...state.todos, { text, id: Date.now() }] })),
+        set((state) => {
+          const newTodo = { text, id: Date.now() };
+          const updatedTodos = [...state.todos, newTodo];
+          localStorage.setItem("todos", JSON.stringify(updatedTodos));
+          return { todos: updatedTodos };
+        }),
       removeTodo: (id) =>
         set((state) => ({
           todos: state.todos.filter((todo) => todo.id !== id),
@@ -23,7 +28,7 @@ export const store = create(
     }),
     {
       name: "bear-storage",
-      storage: createJSONStorage(() => sessionStorage),
+      storage: createJSONStorage(() => localStorage),
     }
   )
 );
