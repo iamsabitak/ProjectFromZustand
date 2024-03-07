@@ -12,16 +12,11 @@ export const store = create(
       removeAllBears: () => set({ bears: 0 }),
       updateBears: (newBears) => set({ bears: newBears }),
 
-      increase: () => set(() => ({ count: get().count + 1 })),
+      increase: () => set((state) => ({ count: state.count + 1 })),
       decrease: () => set((state) => ({ count: state.count - 1 })),
 
       addTodo: (text) =>
-        set((state) => {
-          const newTodo = { text, id: Date.now() };
-          const updatedTodos = [...state.todos, newTodo];
-          localStorage.setItem("todos", JSON.stringify(updatedTodos));
-          return { todos: updatedTodos };
-        }),
+        set((state) => ({ todos: [...state.todos, { text, id: Date.now() }] })),
       removeTodo: (id) =>
         set((state) => ({
           todos: state.todos.filter((todo) => todo.id !== id),
@@ -38,7 +33,7 @@ export const store = create(
         })),
     }),
     {
-      name: "bear-storage",
+      name: "storage",
       storage: createJSONStorage(() => localStorage),
     }
   )
