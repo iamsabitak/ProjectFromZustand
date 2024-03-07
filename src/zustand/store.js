@@ -11,7 +11,7 @@ export const store = create(
       removeAllBears: () => set({ bears: 0 }),
       updateBears: (newBears) => set({ bears: newBears }),
 
-      increase: () => set((state) => ({ count: state.count + 1 })),
+      increase: () => set(() => ({ count: get().count + 1 })),
       decrease: () => set((state) => ({ count: state.count - 1 })),
 
       addTodo: (text) =>
