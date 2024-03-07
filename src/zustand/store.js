@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { createJSONStorage, persist } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 
 export const store = create(
   persist(
@@ -34,7 +34,6 @@ export const store = create(
     }),
     {
       name: "storage",
-      storage: createJSONStorage(() => localStorage),
     }
   )
 );
