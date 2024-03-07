@@ -13,6 +13,8 @@ function AddTodo() {
     removeTodo(id);
   };
 
+  console.log("stores", todos);
+
   return (
     <div>
       <input
